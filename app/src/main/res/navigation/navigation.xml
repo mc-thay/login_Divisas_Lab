@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/login">
+
+    <!-- Fragmento de login -->
+    <fragment
+        android:id="@+id/login"
+        android:name="com.aguilar.login_divisas.Login"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_convDivisas"
+            app:destination="@id/convDivisas" />
+    </fragment>
+
+    <!-- Fragmento de conversión de divisas -->
+    <fragment
+        android:id="@+id/convDivisas"
+        android:name="com.aguilar.login_divisas.ConvDivisas"
+        android:label="fragment_conv_divisas"
+        tools:layout="@layout/fragment_conv_divisas" >
+        <action
+            android:id="@+id/action_convDivisas_to_login"
+            app:destination="@id/login" />
+    </fragment>
+
+</navigation>
