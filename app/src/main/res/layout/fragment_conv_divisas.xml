@@ -6,96 +6,111 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B3AABA"
+    android:background="@drawable/background_gradient"
     tools:context=".ConvDivisas">
 
+    <!-- Título principal -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Banco BBVA"
-        android:textColor="@color/primary_text"
+
+        android:textColor="@color/celeste"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        app:layout_constraintHorizontal_bias="0.5" />
 
+    <!-- Spinner para el tipo de conversión -->
     <Spinner
         android:id="@+id/conversionTypeSpinner"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_margin="16dp"
         android:background="@drawable/spinner_background"
         android:entries="@array/conversion_types"
-        android:padding="10dp"
-        android:textColor="@color/primary_text"
+        android:padding="12dp"
+        android:textColor="@color/yellow"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
+    <!-- EditText para el ingreso de monto -->
     <EditText
         android:id="@+id/inputSoles"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_margin="16dp"
         android:background="@drawable/rounded_edittext"
         android:hint="Ingrese monto"
         android:inputType="numberDecimal"
         android:padding="12dp"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/conversionTypeSpinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
+    <!-- Botón para convertir -->
     <Button
         android:id="@+id/convertButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/button_background"
+        style="@style/CustomButtonStyle"
+        android:layout_width="0dp"
         android:text="Convertir"
         android:textColor="@color/button_text"
-        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/inputSoles"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
 
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Texto de resultado de la conversión -->
     <TextView
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Conversión"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@+id/convertButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
+    <!-- Texto para el tipo de cambio -->
     <TextView
         android:id="@+id/exchangeRateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tipo de Cambio: S/ 3.70"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp" />
 
+    <!-- Botón para cerrar sesión -->
     <Button
         android:id="@+id/logoutButton"
+        style="@style/CustomButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:backgroundTint="@color/button_background"
-        android:text="Cerrar Sesión"
+        android:text="Salir"
         android:textColor="@color/button_text"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/resultTextView"
+        app:layout_constraintTop_toBottomOf="@+id/exchangeRateTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

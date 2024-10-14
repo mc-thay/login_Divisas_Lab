@@ -9,4 +9,5 @@
     <color name="primary_text">#333333</color>
     <color name="button_background">#6200EE</color>
     <color name="button_text">#FFFFFF</color>
+    <color name="yellow">#FFEB3B</color>
 </resources>
